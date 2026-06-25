@@ -36,6 +36,15 @@ type Config struct {
 	SDKName    string
 	SDKVersion string
 
+	// MaxRetries is the number of transport retries after the initial attempt.
+	// The same body (hence the same event_id) is replayed each time, so the
+	// ingest API's idempotency dedupe makes a retry safe.
+	MaxRetries int
+	// RetryBaseMs is the base exponential-backoff delay, in milliseconds.
+	RetryBaseMs int
+	// RetryCapMs caps both the backoff delay and an honoured Retry-After, in ms.
+	RetryCapMs int
+
 	// Enabled is the resolved effective flag (Enabled == !Disabled), set by New.
 	// Callers do not need to set this; use Disabled to opt out.
 	Enabled bool
@@ -50,6 +59,9 @@ const (
 	defaultMaxMessage = 2000
 	defaultSDKName    = "g8scope-go"
 	defaultSDKVersion = "1.0.0"
+	defaultMaxRetries = 2
+	defaultRetryBase  = 100
+	defaultRetryCap   = 2000
 )
 
 // withDefaults returns a copy of cfg with zero-valued fields filled in. The
@@ -75,6 +87,21 @@ func (cfg Config) withDefaults() Config {
 	}
 	if cfg.SDKVersion == "" {
 		cfg.SDKVersion = defaultSDKVersion
+	}
+	// Retry knobs: a zero is treated as unset (use the default), matching how the
+	// other caps above default. To disable retries explicitly, set MaxRetries to a
+	// negative value — ShouldRetry then never fires.
+	if cfg.MaxRetries == 0 {
+		cfg.MaxRetries = defaultMaxRetries
+	}
+	if cfg.MaxRetries < 0 {
+		cfg.MaxRetries = 0
+	}
+	if cfg.RetryBaseMs == 0 {
+		cfg.RetryBaseMs = defaultRetryBase
+	}
+	if cfg.RetryCapMs == 0 {
+		cfg.RetryCapMs = defaultRetryCap
 	}
 	return cfg
 }

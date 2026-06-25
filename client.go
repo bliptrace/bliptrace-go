@@ -28,7 +28,7 @@ func New(cfg Config) *Client {
 
 	return &Client{
 		cfg:       resolved,
-		transport: NewHTTPTransport(),
+		transport: newHTTPTransport(resolved),
 		scrubber:  NewScrubber(resolved.ScrubKeys),
 	}
 }
