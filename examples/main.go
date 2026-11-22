@@ -9,7 +9,7 @@ import (
 	"os"
 	"strconv"
 
-	g8 "github.com/developers-hub-my/g8scope-go"
+	g8 "github.com/bliptrace/bliptrace-go"
 )
 
 func main() {

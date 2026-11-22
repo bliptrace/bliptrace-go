@@ -1,4 +1,4 @@
-# g8scope-go
+# bliptrace-go
 
 The runtime **Go** SDK for [g8scope](https://scope.g8suite.com) — a central,
 multi-tenant error-capture and observability platform.
@@ -11,7 +11,7 @@ only** (no external dependencies) and the capture path is fully guarded — it w
 ## Installation
 
 ```sh
-go get github.com/developers-hub-my/g8scope-go
+go get github.com/bliptrace/bliptrace-go
 ```
 
 ## Usage
@@ -23,7 +23,7 @@ import (
 	"errors"
 	"time"
 
-	g8scope "github.com/developers-hub-my/g8scope-go"
+	g8scope "github.com/bliptrace/bliptrace-go"
 )
 
 func main() {
@@ -75,7 +75,7 @@ if ok {
 | `ScrubKeys`    | `nil`                                  | Context keys (case-insensitive) redacted to `[REDACTED]`.    |
 | `BasePath`     | `""`                                   | When set, a frame is in-app iff its file starts with it.     |
 | `Disabled`     | `false`                                | Capture is on by default; set `true` to opt out.            |
-| `SDKName`      | `g8scope-go`                           |                                                              |
+| `SDKName`      | `bliptrace-go`                           |                                                              |
 | `SDKVersion`   | `1.0.0`                                |                                                              |
 
 ## How the project is resolved

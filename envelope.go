@@ -133,7 +133,7 @@ func captureFrames(cfg Config) []Frame {
 	return frames
 }
 
-const sdkPkgPath = "github.com/developers-hub-my/g8scope-go"
+const sdkPkgPath = "github.com/bliptrace/bliptrace-go"
 
 // sdkCapturePath lists the SDK's own functions on the capture call path. We skip
 // these so the host app's frames sit at the top of the trace. We match by
