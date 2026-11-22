@@ -1,6 +1,6 @@
 // Example: capture a catalogue of Go errors with the g8scope SDK.
 //
-//	G8SCOPE_KEY=... G8SCOPE_ENDPOINT=http://localhost:8088 go run ./examples
+//	BLIPTRACE_KEY=... BLIPTRACE_ENDPOINT=http://localhost:8088 go run ./examples
 package main
 
 import (
@@ -14,8 +14,8 @@ import (
 
 func main() {
 	client := g8.New(g8.Config{
-		Key:         os.Getenv("G8SCOPE_KEY"),
-		Endpoint:    env("G8SCOPE_ENDPOINT", "http://localhost:8088"),
+		Key:         os.Getenv("BLIPTRACE_KEY"),
+		Endpoint:    env("BLIPTRACE_ENDPOINT", "http://localhost:8088"),
 		Environment: "demo",
 		Release:     "demo-go@1.0",
 	})
