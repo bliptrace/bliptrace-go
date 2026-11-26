@@ -52,7 +52,7 @@ type Config struct {
 
 // Default values for unset fields.
 const (
-	defaultEndpoint   = "https://ingest.scope.g8suite.com"
+	defaultEndpoint   = "https://ingest.bliptrace.com"
 	defaultEnviron    = "production"
 	defaultTimeout    = 3 * time.Second
 	defaultMaxFrames  = 30

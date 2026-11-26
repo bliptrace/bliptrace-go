@@ -65,7 +65,7 @@ if ok {
 | Field          | Default                                | Notes                                                        |
 | -------------- | -------------------------------------- | ------------------------------------------------------------ |
 | `Key`          | `""`                                   | Ingest key. Capture is a no-op without it.                   |
-| `Endpoint`     | `https://ingest.scope.g8suite.com`     | Posts to `{Endpoint}/v1/ingest`.                             |
+| `Endpoint`     | `https://ingest.bliptrace.com`     | Posts to `{Endpoint}/v1/ingest`.                             |
 | `Environment`  | `production`                           |                                                              |
 | `Release`      | `""`                                   | Optional release marker.                                     |
 | `Timeout`      | `3s`                                   | Per-request HTTP timeout.                                    |
