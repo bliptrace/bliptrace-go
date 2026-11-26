@@ -1,9 +1,9 @@
 # bliptrace-go
 
-The runtime **Go** SDK for [g8scope](https://scope.g8suite.com) — a central,
+The runtime **Go** SDK for [Bliptrace](https://bliptrace.com) — a central,
 multi-tenant error-capture and observability platform.
 
-The SDK builds the language-neutral g8scope **error envelope** from a Go `error`,
+The SDK builds the language-neutral Bliptrace **error envelope** from a Go `error`,
 scrubs PII from your context, and POSTs it to the ingest API. It is **stdlib
 only** (no external dependencies) and the capture path is fully guarded — it will
 **never panic into your application**.
@@ -23,11 +23,11 @@ import (
 	"errors"
 	"time"
 
-	g8scope "github.com/bliptrace/bliptrace-go"
+	"github.com/bliptrace/bliptrace-go"
 )
 
 func main() {
-	client := g8scope.New(g8scope.Config{
+	client := bliptrace.New(bliptrace.Config{
 		Key:         "your-ingest-key",          // resolves the project server-side
 		Environment: "production",
 		Release:     "my-app@2026.06.25",

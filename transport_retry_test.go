@@ -1,4 +1,4 @@
-package g8scope
+package bliptrace
 
 import (
 	"encoding/json"

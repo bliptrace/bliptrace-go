@@ -1,4 +1,4 @@
-package g8scope
+package bliptrace
 
 import "time"
 
@@ -57,7 +57,7 @@ const (
 	defaultTimeout    = 3 * time.Second
 	defaultMaxFrames  = 30
 	defaultMaxMessage = 2000
-	defaultSDKName    = "g8scope-go"
+	defaultSDKName    = "bliptrace-go"
 	defaultSDKVersion = "1.0.0"
 	defaultMaxRetries = 2
 	defaultRetryBase  = 100

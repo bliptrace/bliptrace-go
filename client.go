@@ -1,4 +1,4 @@
-// Package g8scope is the runtime Go SDK for the g8scope error-capture platform.
+// Package bliptrace is the runtime Go SDK for the Bliptrace error-capture platform.
 //
 // It builds a language-neutral error envelope from a Go error, scrubs PII from
 // the supplied context, and ships it to the ingest API. The capture path is
@@ -6,7 +6,7 @@
 //
 // The project is resolved server-side from the ingest key — it is never placed
 // in the payload, so a client cannot spoof another tenant.
-package g8scope
+package bliptrace
 
 import "strings"
 

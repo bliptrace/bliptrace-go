@@ -1,4 +1,4 @@
-// Example: capture a catalogue of Go errors with the g8scope SDK.
+// Example: capture a catalogue of Go errors with the Bliptrace SDK.
 //
 //	BLIPTRACE_KEY=... BLIPTRACE_ENDPOINT=http://localhost:8088 go run ./examples
 package main

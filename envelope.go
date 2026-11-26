@@ -1,4 +1,4 @@
-package g8scope
+package bliptrace
 
 import (
 	"crypto/rand"
@@ -8,7 +8,7 @@ import (
 	"time"
 )
 
-// Envelope is the language-neutral g8scope wire contract (schema v1.0).
+// Envelope is the language-neutral Bliptrace wire contract (schema v1.0).
 // Note: there is intentionally no Project field — the server resolves the
 // project from the ingest key.
 type Envelope struct {

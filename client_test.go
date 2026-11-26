@@ -1,4 +1,4 @@
-package g8scope
+package bliptrace
 
 import (
 	"errors"
@@ -121,8 +121,8 @@ func TestIgnoresConfiguredErrorTypes(t *testing.T) {
 		wantSendable bool
 	}{
 		{"ignore by full type", []string{"*errors.errorString"}, errors.New("noise"), false},
-		{"ignore named type", []string{"*g8scope.myError"}, &myError{"noise"}, false},
-		{"non-matching ignore sends", []string{"*g8scope.myError"}, errors.New("real"), true},
+		{"ignore named type", []string{"*bliptrace.myError"}, &myError{"noise"}, false},
+		{"non-matching ignore sends", []string{"*bliptrace.myError"}, errors.New("real"), true},
 		{"empty ignore sends", nil, errors.New("real"), true},
 	}
 	for _, tt := range tests {
